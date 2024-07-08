@@ -8,6 +8,8 @@
 - **CSS**
 - **Javascript**
 
+The frontend of this portfolio is deployed in github pages and backend in vercel.
+
 ## Visit My Portfolio
 
 You can visit my portfolio at the following link:
@@ -23,6 +25,8 @@ You can visit my portfolio at the following link:
 - **HTML**
 - **CSS**
 - **Javascript**
+
+El frontend de este portafolio se implementa en páginas de github y el backend en vercel.
 
 ## Visita mi Portfolio
 
