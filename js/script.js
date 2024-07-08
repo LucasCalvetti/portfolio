@@ -57,7 +57,7 @@ iconMenu.addEventListener("click", () => {
 const descriptionproject = [
   {
     title: "Piedra, papel o tijeras online",
-    description: "Podes Jugar al piedra papel o tijera contra un amigo,<br/> solo debes compartir el codigo de sala.<br/><br/> IMPORTANTE: Demora 30 segundos en iniciar la pagina <br/> debido al sleep mode del host.",
+    description: "Podes Jugar al piedra papel o tijera contra un amigo,<br/> solo debes compartir el codigo de sala.<br/><br/> IMPORTANTE: Demora 60 segundos en iniciar la pagina <br/> debido al sleep mode del host.",
     icon: ["fab fa-css3-alt", "fab fa-html5", "fab fa-js-square", "fab fa-node"],
     iconifyIcons: ["simple-icons:typescript", "mdi:firebase"],
     id: "ppoto",
@@ -72,7 +72,7 @@ const descriptionproject = [
   {
     title: "Buscador de mascotas perdidas",
     description:
-      "Una simple app para registrar mascotas perdidas<br/> con geolocalización en un mapa y si alguien la encuentra<br/> te envia un mail.<br/><br/> IMPORTANTE: Demora 30 segundos en iniciar la pagina <br/> debido al sleep mode del host.",
+      "Una simple app para registrar mascotas perdidas<br/> con geolocalización en un mapa y si alguien la encuentra<br/> te envia un mail.<br/><br/> IMPORTANTE: Demora 60 segundos en iniciar la pagina <br/> debido al sleep mode del host.",
     icon: ["fab fa-react", "fab fa-css3-alt", "fab fa-html5"],
     iconifyIcons: ["simple-icons:typescript", "simple-icons:postgresql", "simple-icons:express", "simple-icons:algolia"],
     id: "pet-finder",
@@ -86,16 +86,14 @@ const descriptionproject = [
   },
   {
     title: "Triunfo360",
-    description: "<br/> StartUp en la que estuve trabajando desarrollando landings, gráficos, conexiones API,<br/> liderando equipo y creciendo profesionalmente.",
+    description: "<br/> StartUp en la que estuve trabajando desarrollando landings,<br/> gráficos, conexiones API, liderando equipo y creciendo profesionalmente. <br/> Actualmente en construcción.",
     icon: ["fab fa-js-square", "fab fa-css3-alt", "fab fa-html5", "fab fa-react"],
     iconifyIcons: ["mdi:tailwind"],
     id: "triunfo360",
     iconGithub: "fab fa-github",
     iconDemo: "fab fa-youtube",
     page: "fas fa-globe-americas",
-    linkGithub: "https://github.com/LucasCalvetti/desafio-ecommerce-dwf-m9",
     linkDemo: "https://www.youtube.com/",
-    linkPage: "https://emilianogorgellon.github.io/cuenta-regresiva/",
     id_index: 3,
   },
   {
@@ -170,29 +168,37 @@ const rellenar = (e) => {
     let iconosSinComas = iconos.join("");
     let iconifyIconsSinComas = iconifyIcons.join("");
     if (datos.id === e.target.id) {
+      let linksHTML = "";
+      if (datos.linkGithubBack) {
+        linksHTML += `<a href="${datos.linkGithubBack}" class="link-github" target="_blank" ><i class="${datos.iconGithub}"></i> Github Backend</a>`;
+      } else if (datos.linkGithub) {
+        linksHTML += `<a href="${datos.linkGithub}" class="link-github" target="_blank" ><i class="${datos.iconGithub}"></i> Github</a>`;
+      }
+      if (datos.linkDemo) {
+        linksHTML += `<a href="${datos.linkDemo}" class="link-github" target="_blank" ><i class="${datos.iconDemo}"></i>Demo</a>`;
+      } else if (datos.linkGithubFront) {
+        linksHTML += `<a href="${datos.linkGithubFront}" class="link-github" target="_blank" ><i class="${datos.iconGithub}"></i> Github Frontend</a>`;
+      }
+      if (datos.linkPage || datos.documentation) {
+        linksHTML += `<a href="${datos.linkPage ? datos.linkPage : datos.documentation}" class="link-page" target="_blank" ><i class="${datos.page}"></i> ${datos.linkPage ? "Visitar sitio web" : "Ver documentación"}</a>`;
+      }
       document.getElementById(`${datos.id}`).insertAdjacentHTML(
         "afterbegin",
         `<div class="container--information-project">
-                    <h3 class="information--title">${datos.title} </h3>
-                    <p class="information--description">${datos.description}</p>
-                    <div class="container-icon">
-                        ${iconosSinComas}
-                        <div style="display: flex; flex-direction: row; gap: 28px; padding-left: 18px;">${datos.iconifyIcons ? `${iconifyIconsSinComas}` : null}</div>
-                    </div>
-                    <div class="container--information-links">
-                        ${
-                          datos.linkGithubBack
-                            ? `<a href="${datos.linkGithubBack}" class="link-github" target="_blank" ><i class="${datos.iconGithub}"></i> Github Backend</a>`
-                            : `<a href="${datos.linkGithub}" class="link-github" target="_blank" ><i class="${datos.iconGithub}"></i> Github</a>`
-                        }
-                          ${
-                            datos.linkDemo
-                              ? `<a href="${datos.linkDemo}" class="link-github" target="_blank" ><i class="${datos.iconDemo}"></i>Demo</a>`
-                              : `<a href="${datos.linkGithubFront}" class="link-github" target="_blank" ><i class="${datos.iconGithub}"></i> Github Frontend</a>`
-                          }
-                        <a href="${datos.linkPage ? datos.linkPage : datos.documentation}" class="link-page" target="_blank" ><i class="${datos.page}"></i> ${datos.linkPage ? "Visitar sitio web" : "Ver documentación"}</a>
-                    </div>
-                </div>`
+          <h3 class="information--title">${datos.title}</h3>
+          <p class="information--description">${datos.description}</p>
+          <div class="container-icon">
+            <div class="container-icon1">
+              ${iconosSinComas}
+            </div>
+            <div class="container-icon2">
+              ${datos.iconifyIcons ? `${iconifyIconsSinComas}` : ""}
+            </div>
+          </div>
+          <div class="container--information-links">
+            ${linksHTML}
+          </div>
+        </div>`
       );
       break;
     }
