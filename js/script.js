@@ -28,7 +28,7 @@ const revealSectionAnimation = (section, direction, distance) => {
 // Applying animations to specific sections
 revealSectionAnimation(".header", "bottom", "-100px");
 revealSectionAnimation(".profile-title", "left", "250px");
-revealSectionAnimation(".container-proyects", "left", "1000px");
+revealSectionAnimation(".container-projects", "left", "1000px");
 revealSectionAnimation(".container--about-me", "bottom", "500px");
 revealSectionAnimation(".container-form", "right", "250px");
 
@@ -54,7 +54,7 @@ if (window.innerWidth > 768) {
 iconMenu.addEventListener("click", () => {
   mainMenu.classList.toggle("menu--show");
 });
-const descriptionProyect = [
+const descriptionproject = [
   {
     title: "Piedra, papel o tijeras online",
     description: "Podes Jugar al piedra papel o tijera contra un amigo,<br/> solo debes compartir el codigo de sala.<br/><br/> IMPORTANTE: Demora 30 segundos en iniciar la pagina <br/> debido al sleep mode del host.",
@@ -86,7 +86,7 @@ const descriptionProyect = [
   },
   {
     title: "Triunfo360",
-    description: "StartUp en la que estuve trabajando desarrollando landings, gráficos, conexiones API y demás.",
+    description: "<br/> StartUp en la que estuve trabajando desarrollando landings, gráficos, conexiones API,<br/> liderando equipo y creciendo profesionalmente.",
     icon: ["fab fa-js-square", "fab fa-css3-alt", "fab fa-html5", "fab fa-react"],
     iconifyIcons: ["mdi:tailwind"],
     id: "triunfo360",
@@ -114,7 +114,7 @@ const descriptionProyect = [
   },
   {
     title: "Piedra, papel o tijeras vs PC",
-    description: "Podes Jugar al piedra papel o tijera contra la PC.",
+    description: "<br/> Podes Jugar al piedra papel o tijera contra la PC.",
     icon: ["fab fa-css3-alt", "fab fa-html5", "fab fa-js-square", "fab fa-node", "fab fa-github"],
     iconifyIcons: ["simple-icons:typescript"],
     id: "ppot",
@@ -125,6 +125,20 @@ const descriptionProyect = [
     linkDemo: "https://www.youtube.com/",
     linkPage: "https://lucascalvetti.github.io/dwf-m5-desafio-final-juego/",
     id_index: 5,
+  },
+  {
+    title: "Portfolio",
+    description: "<br/> Este mismo portfolio, hecho de manera muy<br/> simple ya que no requiere escalabilidad.",
+    icon: ["fab fa-css3-alt", "fab fa-html5", "fab fa-js-square", "fab fa-node", "fab fa-github"],
+    iconifyIcons: ["simple-icons:express"],
+    id: "portfolio",
+    iconGithub: "fab fa-github",
+    iconDemo: "fab fa-youtube",
+    page: "fas fa-globe-americas",
+    linkGithubFront: "https://github.com/LucasCalvetti/portfolio-frontend",
+    linkGithubBack: "https://github.com/LucasCalvetti/portfolio-backend",
+    linkPage: "https://lucascalvetti.github.io/portfolio-frontend/",
+    id_index: 6,
   },
 ];
 const textSkill = [
@@ -147,7 +161,7 @@ const textSkill = [
 ];
 
 const rellenar = (e) => {
-  for (datos of descriptionProyect) {
+  for (datos of descriptionproject) {
     var iconifyIcons = [];
     if (datos.iconifyIcons[0]) {
       iconifyIcons = datos.iconifyIcons.map((dato) => `<span class="iconify" style="width: 26px; height: 26px; position: relative; bottom: 12px;" data-icon="${dato}"></span>`);
@@ -158,7 +172,7 @@ const rellenar = (e) => {
     if (datos.id === e.target.id) {
       document.getElementById(`${datos.id}`).insertAdjacentHTML(
         "afterbegin",
-        `<div class="container--information-proyect">
+        `<div class="container--information-project">
                     <h3 class="information--title">${datos.title} </h3>
                     <p class="information--description">${datos.description}</p>
                     <div class="container-icon">
@@ -166,9 +180,17 @@ const rellenar = (e) => {
                         <div style="display: flex; flex-direction: row; gap: 28px; padding-left: 18px;">${datos.iconifyIcons ? `${iconifyIconsSinComas}` : null}</div>
                     </div>
                     <div class="container--information-links">
-                        <a href="${datos.linkGithub}" class="link-github" target="_blank" ><i class="${datos.iconGithub}"></i> Github</a>
+                        ${
+                          datos.linkGithubBack
+                            ? `<a href="${datos.linkGithubBack}" class="link-github" target="_blank" ><i class="${datos.iconGithub}"></i> Github Backend</a>`
+                            : `<a href="${datos.linkGithub}" class="link-github" target="_blank" ><i class="${datos.iconGithub}"></i> Github</a>`
+                        }
+                          ${
+                            datos.linkDemo
+                              ? `<a href="${datos.linkDemo}" class="link-github" target="_blank" ><i class="${datos.iconDemo}"></i>Demo</a>`
+                              : `<a href="${datos.linkGithubFront}" class="link-github" target="_blank" ><i class="${datos.iconGithub}"></i> Github Frontend</a>`
+                          }
                         <a href="${datos.linkPage ? datos.linkPage : datos.documentation}" class="link-page" target="_blank" ><i class="${datos.page}"></i> ${datos.linkPage ? "Visitar sitio web" : "Ver documentación"}</a>
-                        <a href="${datos.linkDemo}" class="link-demo" target="_blank" ><i class="${datos.iconDemo}"></i> Demo</a>
                     </div>
                 </div>`
       );
@@ -179,14 +201,14 @@ const rellenar = (e) => {
 
 const verProyectosCelulares = (e) => {
   let index = 0;
-  for (datos of descriptionProyect) {
+  for (datos of descriptionProject) {
     index++;
     let iconos = datos.icon.map((dato) => `<i class="${dato} icon"></i>`);
     let iconosSinComas = iconos.join("");
     if (datos.id_index === index) {
       document.getElementById(`${datos.id}`).insertAdjacentHTML(
         "afterbegin",
-        `<div class="container--information-proyect">
+        `<div class="container--information-project">
                     <h3 class="information--title">${datos.title} </h3>
                     <p class="information--description">${datos.description}</p>
                     <div class="container-icon">

@@ -179,14 +179,14 @@ body {
   height: 50px;
   width: 100%;
 }
-.main--container-proyect {
+.main--container-project {
   padding-top: 20px;
   display: block;
   background-color: var(--blue);
   padding-bottom: 300px;
   position: relative;
 }
-.main--container-proyect::after {
+.main--container-project::after {
   content: "";
   position: absolute;
   width: 100%;
@@ -197,7 +197,7 @@ body {
   background-size: cover;
   background-color: var(--blue);
 }
-.container-proyect-title {
+.container-project-title {
   margin: 0;
   padding-top: 50px;
   padding-bottom: 50px;
@@ -207,7 +207,7 @@ body {
   color: var(--light-blue);
   font-size: 50px;
 }
-.container-proyects {
+.container-projects {
   display: grid;
   grid-template-columns: 1fr;
   gap: 50px;
@@ -216,55 +216,60 @@ body {
 }
 
 @media screen and (min-width: 768px) {
-  .container-proyects {
+  .container-projects {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-.proyects {
+.projects {
   width: 100%;
   height: var(--height-mobile);
   border-radius: 12px;
 }
 @media screen and (min-width: 768px) {
-  .proyects {
+  .projects {
     height: var(--height-desktop);
   }
 }
-.proyect-1,
-.proyect-2,
-.proyect-3,
-.proyect-4,
-.proyect-5 {
+.project-1,
+.project-2,
+.project-3,
+.project-4,
+.project-5,
+.project-6 {
   background-repeat: no-repeat;
   background-size: cover;
   box-shadow: 1px 1px 25px -3px rgba(0, 0, 0, 0.5);
   transition: all 1000ms;
 }
-.proyect-1:hover,
-.proyect-2:hover,
-.proyect-3:hover,
-.proyect-4:hover,
-.proyect-5:hover {
+.project-1:hover,
+.project-2:hover,
+.project-3:hover,
+.project-4:hover,
+.project-5:hover,
+.project-6:hover {
   box-shadow: 1px 1px 25px -3px rgba(250, 250, 250, 0.7);
   transition: all 1200ms;
 }
-.proyect-1 {
+.project-1 {
   background-image: url("../assets/images/proyecto-1.jpg");
 }
-.proyect-2 {
+.project-2 {
   background-image: url("../assets/images/proyecto-2.jpg");
 }
-.proyect-3 {
+.project-3 {
   background-image: url("../assets/images/proyecto-3.jpg");
 }
-.proyect-4 {
+.project-4 {
   background-image: url("../assets/images/proyecto-4.jpg");
 }
-.proyect-5 {
+.project-5 {
   background-image: url("../assets/images/proyecto-1.jpg");
 }
+.project-6 {
+  background-image: url("../assets/images/proyecto-6.jpg");
+}
 /* Estilos del insert adjacement que contiene la info del proyecto */
-.container--information-proyect {
+.container--information-project {
   margin: 0;
   padding: 0;
   height: var(--height-mobile);
@@ -275,7 +280,7 @@ body {
   text-align: center;
 }
 @media screen and (min-width: 768px) {
-  .container--information-proyect {
+  .container--information-project {
     height: var(--height-desktop);
   }
 }
@@ -336,7 +341,6 @@ body {
   display: block;
   background-color: var(--dark-blue);
   position: relative;
-  z-index: 50;
 }
 
 .about-title {
@@ -712,4 +716,11 @@ h5.text-ava {
   .footer a:hover {
     color: var(--white);
   }
+}
+
+.sparkle {
+  position: fixed;
+  z-index: 6;
+  opacity: 0.3;
+  pointer-events: none;
 }
