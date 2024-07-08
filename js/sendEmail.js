@@ -1,4 +1,4 @@
-const API_URL = "https://vercel.com/lucascalvettis-projects/portfolio-back/654Kp9upiKyN9Lhp8t7zmk5ZABnU";
+const API_URL = "https://portfolio-back-nj37nbnua-lucascalvettis-projects.vercel.app";
 const form = document.querySelector(".contact-form");
 
 async function sendEmail(name, email, description) {
