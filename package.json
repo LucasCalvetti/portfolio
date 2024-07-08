@@ -7,7 +7,6 @@
     "start": "serve ."
   },
   "dependencies": {
-    "serve": "^14.0.1",
-    "vercel-build": "mkdir -p .vercel && cp -r * .vercel && mv .vercel front"
+    "serve": "^14.0.1"
   }
 }
