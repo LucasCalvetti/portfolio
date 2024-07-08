@@ -1,0 +1,13 @@
+{
+  "name": "front",
+  "version": "1.0.0",
+  "description": "Frontend for portfolio",
+  "main": "index.html",
+  "scripts": {
+    "start": "serve ."
+  },
+  "dependencies": {
+    "serve": "^14.0.1",
+    "vercel-build": "mkdir -p .vercel && cp -r * .vercel && mv .vercel front"
+  }
+}
