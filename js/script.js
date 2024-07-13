@@ -65,7 +65,7 @@ const descriptionproject = [
     iconDemo: "fab fa-youtube",
     page: "fas fa-globe-americas",
     linkGithub: "https://github.com/LucasCalvetti/rock-paper-scissors-online",
-    linkDemo: "https://www.youtube.com/",
+    linkDemo: "https://youtu.be/PJ7OvW5xsI4",
     linkPage: "https://rock-paper-scissors-online-dxti.onrender.com/",
     id_index: 1,
   },
@@ -80,25 +80,24 @@ const descriptionproject = [
     iconDemo: "fab fa-youtube",
     page: "fas fa-globe-americas",
     linkGithub: "https://github.com/LucasCalvetti/lost-pets-app-with-react",
-    linkDemo: "https://www.youtube.com/",
+    linkDemo: "https://youtu.be/l8EVf5mMz-Y",
     linkPage: "https://lucas-calvetti-lost-pets-react.web.app/",
     id_index: 2,
   },
   {
     title: "Triunfo360",
-    description: "<br/> StartUp en la que estuve trabajando desarrollando landings,<br/> gráficos, conexiones API, liderando equipo y creciendo profesionalmente. <br/> Actualmente en construcción.",
+    description: "<br/> StartUp en la que estuve trabajando desarrollando landings,<br/> gráficos, conexiones API, liderando equipo y creciendo profesionalmente. <br/> Actualmente en construcción. (No hay video Demo aún)",
     icon: ["fab fa-js-square", "fab fa-css3-alt", "fab fa-html5", "fab fa-react"],
     iconifyIcons: ["mdi:tailwind"],
     id: "triunfo360",
     iconGithub: "fab fa-github",
     iconDemo: "fab fa-youtube",
     page: "fas fa-globe-americas",
-    linkDemo: "https://www.youtube.com/",
     id_index: 3,
   },
   {
     title: "API para E-commerce",
-    description: "Una APIRest desarrollada con Nextjs serverless <br/> Para utilizarla podes usar los datos en la documentación<br/> via Postman o similar.",
+    description: "Una APIRest desarrollada con Nextjs serverless <br/> Para utilizarla podes usar los datos en la documentación<br/> via Postman o similar. (No hay video Demo aún)",
     icon: ["fab fa-js-square"],
     iconifyIcons: ["simple-icons:avajs", "simple-icons:typescript", "file-icons:nextjs", "simple-icons:algolia", "simple-icons:postgresql", "cib:postman"],
     id: "ecommerce",
@@ -106,7 +105,6 @@ const descriptionproject = [
     iconDemo: "fab fa-youtube",
     page: "fas fa-globe-americas",
     linkGithub: "https://github.com/LucasCalvetti/desafio-ecommerce-dwf-m9",
-    linkDemo: "https://www.youtube.com/",
     documentation: "https://documenter.getpostman.com/view/17225834/2s93eWysNw",
     id_index: 4,
   },
@@ -120,7 +118,6 @@ const descriptionproject = [
     iconDemo: "fab fa-youtube",
     page: "fas fa-globe-americas",
     linkGithub: "https://github.com/LucasCalvetti/dwf-m5-desafio-final-juego",
-    linkDemo: "https://www.youtube.com/",
     linkPage: "https://lucascalvetti.github.io/dwf-m5-desafio-final-juego/",
     id_index: 5,
   },
@@ -178,6 +175,8 @@ const rellenar = (e) => {
         linksHTML += `<a href="${datos.linkDemo}" class="link-github" target="_blank" ><i class="${datos.iconDemo}"></i>Demo</a>`;
       } else if (datos.linkGithubFront) {
         linksHTML += `<a href="${datos.linkGithubFront}" class="link-github" target="_blank" ><i class="${datos.iconGithub}"></i> Github Frontend</a>`;
+      } else {
+        linksHTML += `</>`;
       }
       if (datos.linkPage || datos.documentation) {
         linksHTML += `<a href="${datos.linkPage ? datos.linkPage : datos.documentation}" class="link-page" target="_blank" ><i class="${datos.page}"></i> ${datos.linkPage ? "Visitar sitio web" : "Ver documentación"}</a>`;
